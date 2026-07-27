@@ -7,7 +7,7 @@
 
 ## Стек
 
-- Python
+- Python 3.12.10
 - FastAPI
 - CatBoost
 - Pandas
