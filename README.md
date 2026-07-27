@@ -16,6 +16,32 @@
 - PostgreSQL / CSV
 - Jupyter Notebook
 
+## Как скачать datasets/ — обязательно для запуска
+
+Датасеты не хранятся в репозитории из-за размера — они выложены в разделе [Releases](https://github.com/tJoik/post_recommendation_service/releases/tag/v1.0-data), название архива для загрузки — datasets.zip.
+
+3 команды для терминала — скачают архив, распакуют и удалят ненужное, выполнять из корня проекта:
+
+```powershell
+Invoke-WebRequest -Uri "https://github.com/tJoik/post_recommendation_service/releases/download/v1.0-data/datasets.zip" -OutFile datasets.zip
+Expand-Archive datasets.zip -DestinationPath .
+Remove-Item datasets.zip
+```
+
+Архив распаковывается в корень проекта — папка `datasets/` уже внутри datasets.zip, создавать её вручную в корне не нужно.
+
+Должно получиться так:
+
+```text
+post_recommendation_service/
+├── datasets/
+│   ├── feed_data_df_with_target.csv
+│   ├── feed_data_df.csv
+│   ├── post_text_df.csv
+│   └── user_data_df.csv
+├── embeddings/
+└── models/
+```
 
 ## Как запустить проект
 
